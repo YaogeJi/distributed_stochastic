@@ -1,0 +1,287 @@
+2023-02-13 10:43:25 ERROR 400 response executing GraphQL.
+2023-02-13 10:43:25 ERROR {"errors":[{"message":"name required for project query","path":["project"]}],"data":{"project":null}}
+2023-02-13 10:43:25 ERROR Traceback (most recent call last):
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/normalize.py", line 26, in wrapper
+    return func(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 726, in sweep
+    response = self.gql(
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 214, in gql
+    ret = self._retry_gql(
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 242, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/requests/models.py", line 960, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/cli/cli.py", line 102, in wrapper
+    return func(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/cli/cli.py", line 1382, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 584, in run_agent
+    agent.run()
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 188, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/internal.py", line 99, in sweep
+    return self.api.sweep(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/normalize.py", line 28, in wrapper
+    raise CommError(err.response, err)
+wandb.errors.CommError: <Response [400]>
+
+2023-02-13 10:44:50 ERROR 400 response executing GraphQL.
+2023-02-13 10:44:50 ERROR {"errors":[{"message":"name required for project query","path":["project"]}],"data":{"project":null}}
+2023-02-13 10:44:50 ERROR Traceback (most recent call last):
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/normalize.py", line 26, in wrapper
+    return func(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 726, in sweep
+    response = self.gql(
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 214, in gql
+    ret = self._retry_gql(
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 242, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/requests/models.py", line 960, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/cli/cli.py", line 102, in wrapper
+    return func(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/cli/cli.py", line 1382, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 584, in run_agent
+    agent.run()
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 188, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/internal.py", line 99, in sweep
+    return self.api.sweep(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/normalize.py", line 28, in wrapper
+    raise CommError(err.response, err)
+wandb.errors.CommError: <Response [400]>
+
+2023-02-13 10:47:03 ERROR 400 response executing GraphQL.
+2023-02-13 10:47:03 ERROR {"errors":[{"message":"name required for project query","path":["project"]}],"data":{"project":null}}
+2023-02-13 10:47:03 ERROR Traceback (most recent call last):
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/normalize.py", line 26, in wrapper
+    return func(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 726, in sweep
+    response = self.gql(
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 214, in gql
+    ret = self._retry_gql(
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 242, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/requests/models.py", line 960, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/cli/cli.py", line 102, in wrapper
+    return func(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/cli/cli.py", line 1382, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 584, in run_agent
+    agent.run()
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 188, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/internal.py", line 99, in sweep
+    return self.api.sweep(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/normalize.py", line 28, in wrapper
+    raise CommError(err.response, err)
+wandb.errors.CommError: <Response [400]>
+
+2023-02-13 10:50:15 ERROR 400 response executing GraphQL.
+2023-02-13 10:50:15 ERROR {"errors":[{"message":"name required for project query","path":["project"]}],"data":{"project":null}}
+2023-02-13 10:50:15 ERROR Traceback (most recent call last):
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/normalize.py", line 26, in wrapper
+    return func(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 726, in sweep
+    response = self.gql(
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 214, in gql
+    ret = self._retry_gql(
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 242, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/requests/models.py", line 960, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/cli/cli.py", line 102, in wrapper
+    return func(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/cli/cli.py", line 1382, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 584, in run_agent
+    agent.run()
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 188, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/internal.py", line 99, in sweep
+    return self.api.sweep(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/normalize.py", line 28, in wrapper
+    raise CommError(err.response, err)
+wandb.errors.CommError: <Response [400]>
+
+2023-02-13 10:53:15 ERROR Traceback (most recent call last):
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/normalize.py", line 26, in wrapper
+    return func(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 736, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep distributed_stochastic/sweeps/uaykhqsy not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/cli/cli.py", line 102, in wrapper
+    return func(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/cli/cli.py", line 1382, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 641, in agent
+    return run_agent(
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 584, in run_agent
+    agent.run()
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/wandb_agent.py", line 188, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/internal.py", line 99, in sweep
+    return self.api.sweep(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/normalize.py", line 64, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/apis/normalize.py", line 26, in wrapper
+    return func(*args, **kwargs)
+  File "/home/gilbreth/a/ji151/anaconda3/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 736, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.CommError: Sweep distributed_stochastic/sweeps/uaykhqsy not found
+
+2023-02-13 10:54:59 INFO Running runs: []
+2023-02-13 10:55:00 INFO Agent received command: run
+2023-02-13 10:55:00 INFO Agent starting run with config:
+	batch_size: 32
+	d: 20000
+	gamma: 0.01
+	m: 20
+	max_iter: 1000
+	p: 0.2
+	rho: 0.9
+	s: [{'args': ['f8', False, True], 'state': [3, '<', None, None, None, -1, -1, 0]}, '\x00\x00\x00\x00\x00\x00"@']
+	solver: netlasso
+2023-02-13 10:55:00 INFO About to run command: /usr/bin/env python  --batch_size=32 --d=20000 --gamma=0.01 --m=20 --max_iter=1000 --p=0.2 --rho=0.9 "--s=[{'args': ['f8', False, True], 'state': [3, '<', None, None, None, -1, -1, 0]}, '\x00\x00\x00\x00\x00\x00"@']" --solver=netlasso
+2023-02-13 10:55:05 INFO Running runs: ['obzq5ijt']
+2023-02-13 10:55:05 INFO Cleaning up finished run: obzq5ijt
+2023-02-13 10:55:05 INFO Agent received command: run
+2023-02-13 10:55:05 INFO Agent starting run with config:
+	batch_size: 32
+	d: 20000
+	gamma: 0.01
+	m: 20
+	max_iter: 1000
+	p: 0.2
+	rho: 0.9
+	s: [{'args': ['f8', False, True], 'state': [3, '<', None, None, None, -1, -1, 0]}, '\x00\x00\x00\x00\x00\x00"@']
+	solver: atc
+2023-02-13 10:55:05 INFO About to run command: /usr/bin/env python  --batch_size=32 --d=20000 --gamma=0.01 --m=20 --max_iter=1000 --p=0.2 --rho=0.9 "--s=[{'args': ['f8', False, True], 'state': [3, '<', None, None, None, -1, -1, 0]}, '\x00\x00\x00\x00\x00\x00"@']" --solver=atc
+2023-02-13 10:55:10 INFO Running runs: ['deekmim8']
+2023-02-13 10:55:10 INFO Cleaning up finished run: deekmim8
+2023-02-13 10:57:18 INFO Running runs: []
+2023-02-13 10:57:19 INFO Agent received command: run
+2023-02-13 10:57:19 INFO Agent starting run with config:
+	batch_size: 32
+	connectivity: 0.9
+	gamma: 0.01
+	max_iter: 1000
+	num_dimensions: 20000
+	num_nodes: 20
+	probability: 0.2
+	solver: netlasso
+	sparsity: [{'args': ['f8', False, True], 'state': [3, '<', None, None, None, -1, -1, 0]}, '\x00\x00\x00\x00\x00\x00"@']
+2023-02-13 10:57:19 INFO About to run command: /usr/bin/env python  --batch_size=32 --connectivity=0.9 --gamma=0.01 --max_iter=1000 --num_dimensions=20000 --num_nodes=20 --probability=0.2 --solver=netlasso "--sparsity=[{'args': ['f8', False, True], 'state': [3, '<', None, None, None, -1, -1, 0]}, '\x00\x00\x00\x00\x00\x00"@']"
+2023-02-13 10:57:24 INFO Running runs: ['ecvhg2xr']
+2023-02-13 10:57:24 INFO Cleaning up finished run: ecvhg2xr
+2023-02-13 10:57:24 INFO Agent received command: run
+2023-02-13 10:57:24 INFO Agent starting run with config:
+	batch_size: 32
+	connectivity: 0.9
+	gamma: 0.01
+	max_iter: 1000
+	num_dimensions: 20000
+	num_nodes: 20
+	probability: 0.2
+	solver: atc
+	sparsity: [{'args': ['f8', False, True], 'state': [3, '<', None, None, None, -1, -1, 0]}, '\x00\x00\x00\x00\x00\x00"@']
+2023-02-13 10:57:24 INFO About to run command: /usr/bin/env python  --batch_size=32 --connectivity=0.9 --gamma=0.01 --max_iter=1000 --num_dimensions=20000 --num_nodes=20 --probability=0.2 --solver=atc "--sparsity=[{'args': ['f8', False, True], 'state': [3, '<', None, None, None, -1, -1, 0]}, '\x00\x00\x00\x00\x00\x00"@']"
+2023-02-13 10:57:29 INFO Running runs: ['gwrqrv2j']
+2023-02-13 10:57:29 INFO Cleaning up finished run: gwrqrv2j
+2023-02-13 10:57:34 INFO Running runs: []
+2023-02-13 10:58:44 INFO Running runs: []
+2023-02-13 10:58:44 INFO Agent received command: run
+2023-02-13 10:58:44 INFO Agent starting run with config:
+	batch_size: 32
+	connectivity: 0.9
+	gamma: 0.01
+	max_iter: 1000
+	num_dimensions: 20000
+	num_nodes: 20
+	probability: 0.2
+	solver: netlasso
+	sparsity: 9
+2023-02-13 10:58:44 INFO About to run command: /usr/bin/env python  --batch_size=32 --connectivity=0.9 --gamma=0.01 --max_iter=1000 --num_dimensions=20000 --num_nodes=20 --probability=0.2 --solver=netlasso --sparsity=9
+2023-02-13 10:58:49 INFO Running runs: ['9ey0aukz']
+2023-02-13 10:58:49 INFO Cleaning up finished run: 9ey0aukz
+2023-02-13 10:58:50 INFO Agent received command: run
+2023-02-13 10:58:50 INFO Agent starting run with config:
+	batch_size: 32
+	connectivity: 0.9
+	gamma: 0.01
+	max_iter: 1000
+	num_dimensions: 20000
+	num_nodes: 20
+	probability: 0.2
+	solver: atc
+	sparsity: 9
+2023-02-13 10:58:50 INFO About to run command: /usr/bin/env python  --batch_size=32 --connectivity=0.9 --gamma=0.01 --max_iter=1000 --num_dimensions=20000 --num_nodes=20 --probability=0.2 --solver=atc --sparsity=9
+2023-02-13 10:58:55 INFO Running runs: ['cm21l3jn']
+2023-02-13 10:58:55 INFO Cleaning up finished run: cm21l3jn
+2023-02-13 10:59:00 INFO Running runs: []

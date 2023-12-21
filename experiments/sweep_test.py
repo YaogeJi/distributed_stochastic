@@ -18,10 +18,8 @@ sweep_configuration = {
         'num_nodes': {'values':[20]},
         'probability': {'values':[0.2]},
         'connectivity': {'values':[0.9]},
-        'gamma': {'values': [20.,10., 5., 1., 0.1]},
-        'lambda_const': {'values': [10.,1., 0.5, 0.1, 0.05, 0.02, 0.01]},
-        'radius_const': {'values':[1.01, 1.1, 10]},
-        'solver':{'values':['mirror_descent', 'dual_average']},
+        'gamma': {'values':[0.01]},
+        'solver':{'values':['netlasso','atc']},
         'max_iter': {'values': [1000]}        
     }
 }

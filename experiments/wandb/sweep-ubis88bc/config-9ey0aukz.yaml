@@ -1,0 +1,20 @@
+wandb_version: 1
+
+batch_size:
+  value: 32
+connectivity:
+  value: 0.9
+gamma:
+  value: 0.01
+max_iter:
+  value: 1000
+num_dimensions:
+  value: 20000
+num_nodes:
+  value: 20
+probability:
+  value: 0.2
+solver:
+  value: netlasso
+sparsity:
+  value: 9
