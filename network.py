@@ -11,10 +11,11 @@ class FullyConnectedNetwork:
         return self.w
 
 class ErodoRenyi:
-    def __init__(self, m, rho, p, seed):
+    def __init__(self, m, rho, seed):
         self.node = m
         self.rho = rho
-        self.probability = p
+        assert self.rho <= 1 and self.rho >= 0
+        self.probability = 1 - self.rho
         self.seed = seed
 
     def generate(self):
@@ -22,7 +23,7 @@ class ErodoRenyi:
         connectivity = 1
         print("network generating")
         seed = self.seed
-        for i in range(100000):
+        for i in range(10000):
             G = erdos_renyi_graph(self.node, self.probability, seed=seed)
             seed += 1
             connected = is_connected(G)
@@ -41,8 +42,12 @@ class ErodoRenyi:
                 eigenvalue, _ = np.linalg.eig(weighted_matrix)
                 sorted_eigenvalue = np.sort(np.abs(eigenvalue))
                 connectivity = sorted_eigenvalue[-2]
-                print(connectivity)
-                if np.abs(connectivity - self.rho) < 0.001:
+                print(connectivity, self.rho, self.probability)
+                if connectivity - self.rho > 0.001:
+                    self.probability += 0.01
+                elif connectivity - self.rho < -0.001:
+                    self.probability -= 0.01
+                elif np.abs(connectivity - self.rho) < 0.001:
                     print("generating network succeed")
                     return weighted_matrix
         else:
