@@ -1,6 +1,8 @@
 import numpy as np
 from networkx import *
 from utils import MaxIterError
+import torch
+
 
 class FullyConnectedNetwork:
     def __init__(self, m):
@@ -29,7 +31,7 @@ class ErodoRenyi:
             connected = is_connected(G)
             if not connected:
                 continue
-            adjacent_matrix = to_numpy_matrix(G)
+            adjacent_matrix = to_numpy_array(G)
             matrix = np.zeros((self.node, self.node))
             for i in G.edges:
                 degree = max(G.degree(i[0]), G.degree(i[1]))
@@ -37,7 +39,7 @@ class ErodoRenyi:
             adjacent_matrix = to_numpy_array(G)
             weighted_matrix = np.eye(self.node) - np.diag(sum(adjacent_matrix)) + adjacent_matrix
             if self.node == 1:
-                return weighted_matrix
+                return torch.tensor(weighted_matrix, dtype=torch.float)
             else:
                 eigenvalue, _ = np.linalg.eig(weighted_matrix)
                 sorted_eigenvalue = np.sort(np.abs(eigenvalue))
@@ -49,6 +51,6 @@ class ErodoRenyi:
                     self.probability -= 0.01
                 elif np.abs(connectivity - self.rho) < 0.001:
                     print("generating network succeed")
-                    return weighted_matrix
+                    return torch.tensor(weighted_matrix, dtype=torch.float)
         else:
             raise MaxIterError("achieve max iteration without achieving target connectivity")

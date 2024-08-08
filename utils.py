@@ -1,21 +1,22 @@
 import numpy as np
+import torch
 
-
-# need more validation test.
 def proj_l1ball(v, b):
-    m,d = v.shape
+    device = v.device
+    m, d = v.shape
     if b <= 0:
-        raise ValueError("radius of projection should greater than 0")
-    mask = (np.linalg.norm(v,ord=1,axis=1)<b).reshape(-1,1)
+        raise ValueError("radius of projection should be greater than 0")
+    
+    mask = (torch.norm(v, p=1, dim=1) < b).reshape(-1, 1).to(torch.float)
 
-    u = np.sort(np.abs(v),axis=1)
-    u = np.flip(u, axis=1)
-    sv = np.cumsum(u,axis=1)
-    rho = u - (sv - b) / np.tile(np.arange(1, d+1),(m,1)) > 0
-    rho = rho.shape[1] - np.argmax(rho[:, ::-1], axis=1) - 1
-    l1 = np.arange(m)
-    theta = ((sv[l1,rho]-b)*1.0/(rho+1)).clip(min=0)
-    w = (1-mask) * np.sign(v) * ((np.abs(v) - theta.reshape(-1,1)).clip(min=0)) + mask * v
+    u, _ = torch.sort(torch.abs(v), dim=1, descending=True)
+    sv = torch.cumsum(u, dim=1)
+    rho = (u - (sv - b) / torch.arange(1, d + 1, device='cuda')).gt(0).type(torch.int64)
+    rho = d - torch.argmax(rho.flip(dims=[1]), dim=1) - 1
+    l1 = torch.arange(m).to(device)
+    
+    theta = ((sv[l1, rho] - b) / (rho + 1).type(torch.float)).clamp(min=0)
+    w = (1 - mask) * torch.sign(v) * (torch.abs(v) - theta.reshape(-1, 1)).clamp(min=0) + mask * v
     return w
 
 class MaxIterError():
